@@ -7,7 +7,5 @@ Programming interview questions *Algorithms and Data Structures
 ### 2) at least unique 100 questions must be solved
 
 ### Next:
-### -BFS,DFS
 ### -Lee
-### -Valid Parenthesis
 ### -Triangle
