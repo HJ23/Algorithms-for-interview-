@@ -15,21 +15,3 @@ def triangle(array):
 
 
 print(triangle(tri1))
-                
-            
-                    
-        
-
-
-
-
-
-
-
-
-
-
-
-
-
-
