@@ -1,0 +1,1 @@
+### Find common prefix for given string array

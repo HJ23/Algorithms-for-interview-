@@ -1,0 +1,1 @@
+### Search given number in given array and fetch corresponding position

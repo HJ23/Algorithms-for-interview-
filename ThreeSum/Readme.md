@@ -1,0 +1,1 @@
+### Find number group which consist of 3 number and their sum equals given target
