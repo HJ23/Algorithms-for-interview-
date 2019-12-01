@@ -6,6 +6,4 @@ Programming interview questions *Algorithms and Data Structures
 ### 1) do all in C++ or C
 ### 2) at least unique 100 questions must be solved
 
-### Next:
-### -Lee
 
