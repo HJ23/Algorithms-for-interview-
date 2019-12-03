@@ -1,0 +1,1 @@
+### Display given matrix as a spiral form (1D array)
