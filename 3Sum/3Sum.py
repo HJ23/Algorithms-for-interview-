@@ -22,10 +22,8 @@ class Sum3():
         for index in range(len(array)):
             self.hashmap[array[index]]=index
         
-        for x in range(len(array)):
-            for y in range(len(array)):
-                if(x==y):
-                  continue
+        for x in range(0,len(array)):
+            for y in range(x+1,len(array)):
                 a=array[x]+array[y]
                 if(self.check(a,x,y)):
                     self.addSet([array[x],array[y],-a])
