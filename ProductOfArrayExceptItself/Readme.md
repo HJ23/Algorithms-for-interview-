@@ -1,0 +1,1 @@
+### In given array multiply every element except itself and combine each of them in new array in respective position
