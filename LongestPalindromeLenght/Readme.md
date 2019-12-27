@@ -1,1 +1,1 @@
-### Find lenght of longest palindrome in given input string
+### Find length of longest palindrome in given input string
