@@ -4,6 +4,7 @@
 # Add variables into it
 # ****************************************************************************
 import sys
+import time
 
 class argumentPack():
     def __init__(self):
@@ -25,14 +26,14 @@ class BasicTester():
             print("*Test method argument error")
             sys.exit(0)
         else:
+            start_t=time.time()
             value=self.function(packet)
+            stop_t=time.time()
             self.counter+=1
             try:
                 if(value==actualValue):
-                    print("Test {} Passed !".format(self.counter))
+                    print("Test {a} Passed !  elapsed time : {b} sec".format(a=self.counter,b=(stop_t-start_t)))
                 else:
                     raise TestFailedException("*Test Failed : Test number : "+str(self.counter)+ "\nActual Value : "+str(actualValue)+" Got : "+str(value))
             except TestFailedException as exp:
                 exp.show()
-                
-               
