@@ -1,25 +1,26 @@
 # Complexity O(max(m,n)) -> m,n are lenght of given strings
 
 def sumBinary(a,b):
-    sum=int(a)+int(b)
-    result=""
-    reminder=0
-    while(sum!=0):
-        temp=(sum%10+reminder)%2
-        reminder=0
-        if(temp==0 and (sum%10==2 or sum%10==1 )):
-            result="0"+result
-            reminder=1
-        elif(temp==1 and (sum%10==2 )):
-            result="1"+result 
-            reminder=1
-        elif(temp==1 ):
-            result="1"+result 
-        elif(temp==0):
-            result="0"+result   
-        sum=(sum-sum%10)/10
-    result="1"+result if(reminder==1) else result  
-    return result
+   reminder=0
+   mini=a if(len(a)<len(b)) else b
+   maxi=a if(len(a)>=len(b)) else b
+   mini=mini[::-1]
+   maxi=maxi[::-1]
+   ret=""
+   for i,x in enumerate(mini):
+      tmp=reminder+int(x)+int(maxi[i])
+      ret=ret+str(tmp%2)
+      reminder=tmp//2
+   if(reminder==0):
+      return (ret+maxi[len(mini):])[::-1]
+   for x in range(len(mini),len(maxi)):
+      tmp=reminder+int(maxi[x])
+      ret=ret+str(tmp%2)
+      reminder=tmp//2
+   if(reminder!=0):
+      return (ret+"1")[::-1]
+   return ret[::-1]
+
 #Tests
 assert sumBinary("11","11")=="110"
 assert sumBinary("1","11")=="100"
