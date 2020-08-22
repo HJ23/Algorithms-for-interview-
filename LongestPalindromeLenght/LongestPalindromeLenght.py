@@ -13,18 +13,15 @@ def find(input:str)->int:
             map[x]+=1
         else:
             map[x]=1
-    sorted_x = sorted(map.items(), key=lambda kv: kv[1],reverse=True)
+    sort= sorted(map.values(),reverse=True)
     oddd=False
-    for key in sorted_x:
-        if(key[1]%2==0):
-            maximum+=key[1]
+    for val in sort:
+        if(val%2==0):
+            maximum+=val
         else:
-            if(oddd is False):
-                oddd=True
-                maximum+=key[1]
-            else:
-                maximum+=key[1]-1
-    return maximum
+            oddd=True
+            maximum+=val-1
+    return maximum+oddd
 
 testme=BasicTester(find)
 testme.test("abccccddk",7)
