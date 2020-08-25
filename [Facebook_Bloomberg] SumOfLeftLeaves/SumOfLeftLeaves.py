@@ -14,7 +14,6 @@ def find(root):
     while(len(queue)!=0):
         node=queue[0]
         queue.pop(0)
-        
         if(node!=None and node.left!=None and node.left.left==None and node.left.right==None):
             sum+=node.left.val
             queue.append(node.right)
