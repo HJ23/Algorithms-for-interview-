@@ -1,8 +1,4 @@
 
-# ****************************************************************************
-# Extend this abstract class in order to pass multiple arguments into function
-# Add variables into it
-# ****************************************************************************
 import sys
 import time
 
@@ -16,6 +12,14 @@ class TestFailedException(Exception):
     def show(self):
         print(self.message)
 
+def timer(func):
+   start=time.time()
+   def run(inp):
+      return func(inp)
+   print(f"Execution time : {time.time()-start} sec.")
+   return run
+
+
 class BasicTester():
     function=None
     counter=0
@@ -26,9 +30,8 @@ class BasicTester():
             print("*Test method argument error")
             sys.exit(0)
         else:
-            start_t=time.time()
+            @timer
             value=self.function(packet)
-            stop_t=time.time()
             self.counter+=1
             try:
                 if(value==actualValue):
